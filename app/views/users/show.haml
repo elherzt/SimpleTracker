@@ -1,0 +1,9 @@
+.container
+  .col-xs-4
+    %h1
+      = @user.name
+      =@user.last_name
+  .col-xs-8
+    %h1 Projects
+    -@projects.each do |p|
+      =p.description

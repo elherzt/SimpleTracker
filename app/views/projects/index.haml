@@ -1,0 +1,8 @@
+.container
+  .col-xs-12
+    %h1
+      Projects
+      -@projects.each do |p|
+        =p.description
+      =link_to 'Create project' new_user_project_path(current_user.id)
+

@@ -1,0 +1,26 @@
+.container
+  .col-xs-8
+    %h2 Sign up
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = devise_error_messages!
+      %div
+        = f.label :name
+        = f.text_field :name, autofocus: true
+        = f.label :last_name
+        = f.text_field :last_name
+      %div
+        = f.label :username
+        = f.text_field :username
+        = f.label :email
+        = f.email_field :email
+      %div
+        = f.label :password
+        = f.password_field :password, autocomplete: "off"
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, autocomplete: "off"
+      %div= f.submit "Sign up"
+    = render "devise/shared/links"
+  .col-xs-4
+    .jumbotron
+      %h2
+        Bla bla bla bla bla<%= render "devise/shared/links" %>

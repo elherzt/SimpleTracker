@@ -1,0 +1,21 @@
+%nav.navbar.navbar-default{role: "navigation"}
+  .container-fluid
+    .col-xs-10
+      .navbar-header
+        %h2.navbar-brand.btn.btn-default
+          =link_to 'Track Service', root_path
+    .col-xs-2
+      - if !user_signed_in?
+        %ul.nav.navbar-nav.user
+          %li
+            = link_to 'Sign up', new_user_registration_path
+          %li
+            = link_to 'Log in', new_user_session_path
+      - else
+        %ul
+          %li.nav.navbar-nav.user
+            %span
+              =link_to current_user.username, user_path(current_user.id)
+              |
+            %span
+              =link_to 'log out', destroy_user_session_path, method: :delete
